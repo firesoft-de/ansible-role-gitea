@@ -166,6 +166,16 @@ As this will only deploy config files, fail2ban already has to be installed or o
 * `gitea_backup_on_upgrade`: Optionally a backup can be created with every update of gitea. Default: `false`
 * `gitea_backup_location`: Where to store the gitea backup if one is created with this role. Default: `{{ gitea_home }}/backups/`
 
+### GPG signing
+For a detailed description of the available options please refer to https://docs.gitea.io/en-us/signing/
+* `gitea_signing_server_key`: Set the signing key to be used. "none" disables the feature ("none", "default", KEYID). Default: "none"
+* `gitea_signing_inital_commit`: If and when the inital commit should be signed. Default: "always"
+* `gitea_signing_merges`: If and when merges should be signed. Default: "pubkey, twofa, basesigned, commitssigned"
+* `gitea_signing_crud`: If and when commits from the web editor or via API should be signed. Default "pubkey, twofa, parentsigned"
+* `gitea_signing_wiki`: If and when commits to a wiki should be signed. Default"never"
+* `gitea_signing_name`: A name to be include in the signature. Should be provided if you used a KEYID at `gitea_signing_server_key`  Default: ""
+* `gitea_signing_email`: An email adress to be include in the signature. Should be provided if you used a KEYID at `gitea_signing_server_key` Default: ""
+
 ## Contributing
 Don't hesitate to create a pull request, and when in doubt you can reach me on
 Twitter [@thomas_maurice](https://twitter.com/thomas_maurice).
