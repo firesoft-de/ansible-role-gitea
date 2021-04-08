@@ -91,3 +91,11 @@ gitea_extra_config: ""
 
 gitea_backup_on_upgrade: false
 gitea_backup_location: "{{ gitea_home }}/backups/"
+
+gitea_signing_server_key: "none"
+gitea_signing_inital_commit: "always"
+gitea_signing_merges: "pubkey, twofa, basesigned, commitssigned"
+gitea_signing_crud: "pubkey, twofa, parentsigned"
+gitea_signing_wiki: "never"
+gitea_signing_name: ""
+gitea_signing_email: ""
