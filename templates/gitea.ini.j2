@@ -188,4 +188,13 @@ JWT_SECRET = {{ gitea_oauth2_jwt_secret }}
 ENABLED = {{ gitea_metrics_enabled }}
 TOKEN   = {{ gitea_metrics_token }}
 
+[repository.signing]
+SIGNING_KEY = {{ gitea_signing_server_key }}
+SIGNING_NAME = {{ gitea_signing_name}}
+SIGNING_EMAIL = {{ gitea_signing_email }}
+INITIAL_COMMIT = {{ gitea_signing_inital_commit }}
+CRUD_ACTIONS = {{ gitea_signing_crud }}
+WIKI = {{ gitea_signing_wiki }}
+MERGES = {{ gitea_signing_merges }}
+
 {{ gitea_extra_config }}
